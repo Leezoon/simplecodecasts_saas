@@ -1,11 +1,13 @@
+/*global Stripe*/
+
 $(document).ready(function() {
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
 
 //Watch for a form submission :
 $("#form-submit-btn").click(function(event) {
-    event.preventDefault();
-      $('input[type=submit]').prop('disabled', true);
-      var error = false;
+    event.preventDefault(); //stop the button from sending form to server
+      $('input[type=submit]').prop('disabled', true); //disables the button
+      var error = false; //error noti.
       var ccNum = $('#card_number').val(),
           cvcNum = $('#card_code').val(),
           expMonth = $('#card_month').val(),
