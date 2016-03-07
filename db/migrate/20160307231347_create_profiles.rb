@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.text    :description
       
       
-      t.timestamp
+      t.timestamps
     end
   end
 end
