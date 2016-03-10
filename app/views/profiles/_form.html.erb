@@ -1,4 +1,4 @@
-<%= form_for @profile, url: user_profile_path do |f| %>
+<%= form_for @profile, url: user_profile_path, html: { multipart: true } do |f| %>
     <div class="form-group">
       <%= f.label :first_name %>
       <%= f.text_field :first_name, class: 'form-control' %>
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
        <%= f.label :job_title %>
-       <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investors'], {}, class: 'form-control' %>
+       <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor'], {}, class: 'form-control' %>
     </div>
     <div class="form-group">
        <%= f.label :phone_number %>
